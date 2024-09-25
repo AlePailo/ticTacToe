@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #F5F5FA;
+}
+
+body {
+    width: 100%;
+    height: 100svh;
+    background: #1A1616;
+    display: grid;
+    place-items: center;
+}
+
+#turn {
+    position: fixed;
+    font-size: 0.75vw;
+    top: 5rem;
+}
+
+.container {
+    z-index: 99;
+    width: 30vw;
+    aspect-ratio: 1;
+    border-radius: 25px;
+    border: 1vw solid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.cell {
+    border: 2.5px solid;
+    display: grid;
+    place-items: center;
+}
+
+.unchecked {
+    --hover-color: maroon;
+}
+
+.unchecked:hover {
+    background: var(--hover-color);
+}
+
+i {
+    transform: scale(5.5);
+}
+
+.fa-circle {
+    color: maroon;
+}
+
+.fa-x {
+    color: #000F89;
+}
+
+.points {
+    display: flex;
+    position: fixed;
+    top: 20vh;
+    font-size: 3rem;
+    padding: 0.75vw 1.5vw;
+    border: 1px solid #F5F5FA;
+    color: #F5F5FA;
+}
+
+#O-points {
+    background: maroon;
+    left: 25vw;
+}
+
+#X-points {
+    background: #000F89;
+    right: 25vw;
+}
+
+#endGame {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100svh;
+    display: grid;
+    place-items: center;
+    background: transparent;
+}
+
+#endGame-div {
+    width: 25vw;
+    height: 30vh;
+    background: #000;
+    position: fixed;
+    border-radius: 20px;
+    display:grid;
+    place-items: center;
+}
+
+#endGame h1 {
+    font-size: 4vw;
+}
+
+#endGame button {
+    position: absolute;
+    bottom: 1vw;
+    color: rgba(0,0,0,0.5);
+    font-weight: 800;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+}
+
+.greenBg {
+    background: green;
+}
+
+
+@media (max-width: 1150px) {
+    .container {
+        width: 50vw;
+    }
+
+    #turn {
+        position: fixed;
+        font-size: 1.5vw;
+        top: 5rem;
+    }
+
+    #O-points {
+        left: 15vw;
+    }
+    
+    #X-points {
+        right: 15vw;
+    }
+}
+
+@media (max-width: 710px) {
+    .container {
+        width: 75vw;
+        border-width: 2vw;
+    }
+
+    #turn {
+        position: fixed;
+        font-size: 2vw;
+        top: 6.5rem;
+    }
+
+    i {
+        transform: scale(4.5);
+    }
+
+    #endGame {
+        width: 80vw;
+    }
+
+    .points {
+        top: 5rem;
+    }
+
+    #O-points {
+        left: 12.5vw;
+    }
+    
+    #X-points {
+        right: 12.5vw;
+    }
+}
